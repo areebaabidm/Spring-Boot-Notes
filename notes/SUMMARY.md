@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Overview](overview.md)
+* [Overview](README.md)
 * [Project Overview](project-overview.md)
