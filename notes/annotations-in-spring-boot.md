@@ -29,4 +29,33 @@ However, there are some potential disadvantages of using annotations in Spring B
 2. **Tight Coupling**: Annotations can create tight coupling between the application's business logic and the framework. This could potentially make the code less portable or harder to migrate to a different framework in the future.
 3. **Limited Control**: Annotations might limit the flexibility and control over certain configurations or behaviours. In some cases, complex or conditional configurations might be challenging to express using annotations alone, leading to the need for additional programmatic or external configurations.
 
-In summary, while annotations offer significant advantages in terms of simplified configuration, reduced code verbosity, and increased development speed, their overuse or misuse can lead to code clutter, tight coupling, and reduced flexibility. It's essential to strike a balance and use annotations judiciously, considering readability, maintainability, and future scalability of the codebase.
+Spring Boot provides a rich set of annotations that facilitate various functionalities, configurations, and behaviours within the application. Understanding these annotations is crucial for developers to effectively utilise the features provided by Spring Boot. Here are some important annotations in Spring Boot that developers should be familiar with:
+
+1. **@SpringBootApplication**:
+   * An all-encompassing annotation that marks the main class of a Spring Boot application. It combines several annotations, including @Configuration, @EnableAutoConfiguration, and @ComponentScan, enabling auto-configuration and component scanning.
+2. **@RestController** and **@Controller**:
+   * @RestController is used to annotate classes that define RESTful API endpoints. It combines @Controller and @ResponseBody, indicating that the returned value from methods is directly serialised into the HTTP response body.
+   * @Controller marks classes as Spring MVC controllers, handling HTTP requests and defining web-based endpoints.
+3. **@RequestMapping** and **@GetMapping/@PostMapping/@PutMapping/@DeleteMapping**:
+   * @RequestMapping is used at the class or method level to map HTTP requests to specific handler methods.
+   * @GetMapping, @PostMapping, @PutMapping, and @DeleteMapping are shortcuts for @RequestMapping(method = RequestMethod.GET/POST/PUT/DELETE) and are used to map specific HTTP methods to controller methods.
+4. **@Autowired**:
+   * Used for automatic dependency injection in Spring. It injects a dependent bean into the class, field, or method, reducing manual bean wiring.
+5. **@Service** and **@Component**:
+   * @Service marks classes as service beans, often used to hold business logic.
+   * @Component is a generic stereotype annotation for any Spring-managed component.
+6. **@Repository**:
+   * Annotates classes at the persistence layer to indicate that the class fulfills the role of a repository. It usually interacts with the database and performs CRUD operations.
+7. **@Configuration** and **@Bean**:
+   * @Configuration marks classes as configuration classes that define bean definitions.
+   * @Bean is used inside @Configuration classes to declare Spring beans explicitly.
+8. **@Value**:
+   * Used to inject values from properties files or environment variables into Spring-managed beans.
+9. **@Transactional**:
+   * Defines the scope of a database transaction. When used at the method or class level, it ensures that the method or all methods in the class are executed within a transactional boundary.
+10. **@EnableScheduling** and **@Scheduled**:
+
+* @EnableScheduling enables scheduling capabilities in a Spring Boot application.
+* @Scheduled annotates methods to be executed at specific intervals or fixed rates.
+
+These annotations represent a subset of the many annotations available in Spring Boot. Mastering these annotations helps developers effectively leverage Spring Boot's functionalities for building robust, maintainable, and scalable applications.
